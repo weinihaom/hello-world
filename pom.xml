@@ -19,6 +19,7 @@
 
     <modules>
         <module>helloWord</module>
+        <module>SsmDemo</module>
     </modules>
 
 </project>

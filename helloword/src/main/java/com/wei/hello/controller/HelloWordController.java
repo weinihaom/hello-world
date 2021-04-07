@@ -9,8 +9,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.websocket.server.PathParam;
-
 /**
  * Created by weiwei on 2021/4/3.
  *
@@ -30,6 +28,12 @@ public class HelloWordController {
         if (StringUtils.isEmpty(name)) {
             return "名字不能为空！";
         }
-        return helloWordService.hello(name);
+        String res = "";
+        try {
+            res = helloWordService.hello(name);
+        } finally {
+            logger.info(res);
+        }
+        return res;
     }
 }

@@ -4,4 +4,10 @@
     <select id="hello" parameterType="String" resultType="java.lang.String">
         select role_id  from  authority_user_role where id = #{id}
     </select>
+    <insert id="insert" parameterType="String" >
+        select role_id  from  authority_user_role where id = #{id}
+    </insert>
+    <select id="hello" parameterType="String" resultType="java.lang.String">
+        select role_id  from  authority_user_role where id = #{id}
+    </select>
 </mapper>
