@@ -18,6 +18,7 @@ public class ThreadPoolExecutorUtil {
     ArrayBlockingQueue<Runnable> queue = new ArrayBlockingQueue<Runnable>(100);
     public ThreadPoolExecutor poolExecutor = new ThreadPoolExecutor(corePoolSize, corePoolSize * 2 - 1, 60L,
             TimeUnit.SECONDS, queue, Executors.defaultThreadFactory());
+    public ThreadPoolExecutor poolExecutor2 = (ThreadPoolExecutor) Executors.newFixedThreadPool(1);
 
 
     public static void main(String[] args) {
