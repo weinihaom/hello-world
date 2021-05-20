@@ -17,7 +17,7 @@ public class HelloWordServiceImpl implements HelloWordService {
     private HelloWordMapping helloWordMapping;
 
     @Override
-    @GoodsJudgeAnno(judgeName = "测试")
+//    @GoodsJudgeAnno(judgeName = "测试")
     public String hello(String name) {
         String role = helloWordMapping.hello(name);
         return "你好" + role + name;

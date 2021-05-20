@@ -17,7 +17,7 @@ public class MyInterceptor implements HandlerInterceptor {
      */
     @Override
     public boolean preHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o) throws Exception {
-        System.out.printf("preHandle被调用");
+        System.out.printf("拦截器MyInterceptor：preHandle被调用");
         //如果false，停止流程，api被拦截
         return true;
     }
@@ -27,7 +27,7 @@ public class MyInterceptor implements HandlerInterceptor {
      */
     @Override
     public void postHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o, ModelAndView modelAndView) throws Exception {
-        System.out.println("postHandle被调用");
+        System.out.println("拦截器MyInterceptor：postHandle被调用");
     }
 
     /**
@@ -35,6 +35,6 @@ public class MyInterceptor implements HandlerInterceptor {
      */
     @Override
     public void afterCompletion(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o, Exception e) throws Exception {
-        System.out.println("afterCompletion被调用");
+        System.out.println("拦截器MyInterceptor：afterCompletion被调用");
     }
 }
