@@ -2,7 +2,7 @@ package com.wei.demoTest;
 
 import com.wei.myannotation.MyBean;
 
-@MyBean("service")
+@MyBean()
 public class UserService implements IUserService{
 
     public User getUser(String name) {

@@ -48,12 +48,17 @@ public class BeanFactory {
                     if (isProxyBean) {
                         Object proxyBean = this.createBeanProxy(bean);
                         iocBean = proxyBean;
+                        context.putBean(type, iocBean);
+                    }else{
+                        context.putBean(clasz, bean);
                     }
                     //可以修改，增加默认bean的名称
                     if (StringUtils.isNotBlank(beanName)) {
                         context.putBean(beanName, iocBean);
+                    }else {
+                       String defaultName= clasz.getSimpleName();
+                       context.putBean(StringUtils.replaceFirstCase(defaultName), iocBean);
                     }
-                    context.putBean(type, iocBean);
                     BeanInfo beanInfo = new BeanInfo();
                     beanInfo.setClasz(clasz);
                     beanInfo.setBeanName(beanName);
@@ -116,9 +121,5 @@ public class BeanFactory {
 
     public Context getContext() {
         return context;
-    }
-
-    public void setContext(Context context) {
-        this.context = context;
     }
 }

@@ -5,7 +5,7 @@ import com.wei.myannotation.MyBean;
 
 @MyBean
 public class UserController {
-    @AutoInject
+    @AutoInject("userService")
     private IUserService userService;
 
     public User getUserByName(String name) {
